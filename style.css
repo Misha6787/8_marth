@@ -1,0 +1,148 @@
+    @import '//fonts.googleapis.com/css?family=Caveat:400,700&subset=cyrillic';
+    
+    body {
+        margin: 0;
+    /*     background: rgba(92, 23, 86, 1.0);
+        background: -webkit-radial-gradient(top left, rgba(92, 23, 86, 1.0), rgba(199, 168, 179, 1.0));
+        background: -moz-radial-gradient(top left, rgba(92, 23, 86, 1.0), rgba(199, 168, 179, 1.0));
+        background: radial-gradient(top left, rgba(92, 23, 86, 1.0), rgba(199, 168, 179, 1.0)); */
+    background: rgba(248, 153, 235, 1.0);
+    background: -webkit-radial-gradient(center, rgba(248, 153, 235, 1.0), rgba(172, 248, 226, 1.0));
+    background: -moz-radial-gradient(center, rgba(248, 153, 235, 1.0), rgba(172, 248, 226, 1.0));
+    background: radial-gradient(ellipse at center, rgba(248, 153, 235, 1.0), rgba(172, 248, 226, 1.0)); 
+      overflow: hidden;
+        perspective: 1000px;
+        font-family: 'Caveat', cursive;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    .card {
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        padding: 15px 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0 5px 20px rgb(255, 255, 255);
+        transform: translate3d(-40%, -50%, 0) rotateY(30deg);
+        border-radius: 10px;
+        transition: all 0.5s;
+    }
+    .reverse-title{
+        margin-bottom: 10px;
+        background-image: linear-gradient(110deg, #ff6945 0%, #8047ca 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-right: 30px;
+        color: #ff6945;
+        font-size: 48px;
+        transform: rotateY(180deg);
+    }
+    .reverse-title, .title {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        backface-visibility: hidden;
+        border-radius: 10px;
+      }
+      .card:hover .title {
+          transform: rotateY(180deg);
+        }
+      .card:hover .reverse-title {
+          transform: rotateY(360deg);
+        }
+    
+    .title {
+        margin-bottom: 10px;
+        background-image: linear-gradient(110deg, #ff6945    0%, #8047ca 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #ff6945;
+        font-size: 200px;
+        display: flex;
+        flex-direction: column;
+        animation: sex 1s ease-in-out 0.5s alternate-reverse infinite;
+    }
+    .data{
+        font-size: 40px;
+        animation: data 1s ease-in-out 0.5s alternate-reverse infinite;
+        opacity: 0;
+    }
+    .hearts span{
+        position: absolute;
+        color: rgb(255, 107, 218);
+        text-shadow: 0 5px 20px rgb(255, 107, 218);
+        font-size: 90px;
+        animation: hearts 1s ease-in-out 0.5s alternate-reverse infinite;
+        z-index: 10000;
+    }
+    .hearts span:nth-child(1){
+        left: 20%;
+        transform: rotate(40deg);
+        animation-duration: 4s;
+        top: 33%;
+        
+    }
+    .hearts span:nth-child(2){
+        top: 20%;  
+        left: 15%;
+        transform: rotate(40deg);
+        animation-duration: 2s;
+    }
+    .hearts span:nth-child(3){
+        left: 76%;
+        top: 10%;
+        transform: rotate(40deg);
+        animation-duration: 2s;
+    }
+    .hearts span:nth-child(4){
+        left: 80%;
+        top: 45%;
+        transform: rotate(40deg);
+        animation-duration: 2.5s;
+    }
+    @keyframes sex {
+        from {
+            font-size: 250px;
+            background-image: linear-gradient(110deg, #f7098c 10%, #6127ac0c 100%);
+        }
+        to {
+            font-size: 150px;
+            background-image: linear-gradient(110deg, #ff6945 0%, #8047ca 100%);
+        }
+    }
+    @keyframes hearts {
+        from {
+            transform: rotate(0deg);
+            opacity: 0.9;
+            
+        }
+    
+        to {
+            top: 100%;
+            transform: rotate(-70deg);
+            opacity: 1;
+        }
+    }
+      @keyframes data{
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
